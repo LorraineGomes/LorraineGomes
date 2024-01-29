@@ -1,0 +1,6 @@
+- 👋 Hi, I’m @LorraineGomes
+- 👀 I’m interested in DevOps
+- 🌱 I’m currently learning CI/CD and operations with Docker
+- 💞️ I’m looking to collaborate on Crow Tech
+- 📫 How to reach me in lorrainegomescamargo@gmail.com
+- 😄 Pronouns: She 
