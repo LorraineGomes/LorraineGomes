@@ -16,25 +16,18 @@ Apenas copie e cole seu script de backup em uma das pastas do cron específicas 
 Temos as seguintes pastas na estrutura de arquivos do Cron:
 
 cd /etc
+cron.hourly 🕒 para execuções de hora em hora
+cron.daily 🌅 para execuções diárias
+cron.weekly 📅 para execuções semanais
+cron.monthly 🗓️ para execuções mensais
 
-cron.hourly      => de hora em hora
-cron.daily         => diariamente
-cron.weekly      => semanalmente
-cron.monthly   => mensalmente
+Basta colocar seu script na pasta adequada. Você também pode usar caracteres especiais no cron, como:
 
-Basta colar seu script em uma delas de sua escolha e pronto.
-
-Você pode usar também caracteres especiais no seu cron, como:
-
-@reboot seu comando
-@daily seu comando
-@monthly seu comando
+@reboot 🔄 para executar seu comando no reinício
+@daily 🌄 para executar seu comando diariamente
+@monthly 📆 para executar seu comando mensalmente
 
 Então sempre que o dia virar, ou a cada mês ou reboot, o comando será executado.
 
-Outros artigos que falam sobre o Cron:
-https://cleuber.com.br/index.php/2014/06/24/agendador-de-tarefas-cron-no-linux
-script-para-backup-compactado-com-tar-e-gz-com-timestamp-agendado-via-cron
-como-usar-o-comando-rsync-para-transferir-dados-para-diretorios-locais-e-remotos
 
 
