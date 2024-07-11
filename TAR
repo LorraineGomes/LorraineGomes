@@ -1,0 +1,35 @@
+Explicação dos parâmetros do Comando TAR:
+tar = Tape archive.
+c = Create.
+v = Verbose mode.
+p = Preserva os arquivos e as permissões dos diretórios.
+z = Isto irá dizer ao tar para compactar os arquivos ainda mais para reduzir o tamanho do arquivo tar.
+f = Este permite ao tar pegar o nome do arquivo.
+
+
+1 – Crie o script
+Faça-o usando seu editor de texto favorito, como o vi, vim, nano, ou o gedit, e cole abaixo script.
+
+# nano /backup.sh
+Cole o Script abaixo no editor de texto.
+
+ #!/bin/bash
+ #Propósito = Backup de Imagens em "/dados-top"
+ #START
+ TIME=`date +%b-%d-%y`         # Este comando irá adicionar a data no Nome do Arquivo de Backup.
+ FILENAME=Backup-$TIME.tar.gz  # Aqui eu defino o formato do nome do arquivo de backup.
+ SRCDIR=/dados-top             # Local Fonte     - onde estão os arquivos a serem feitos backup.
+ DESDIR=/meubackup             # Local Destino - onde o Backup será salvo.
+ tar -cpzf $DESDIR/$FILENAME $SRCDIR
+ #END
+      
+2 – Dando Permissão e Testando
+Permissão de execução
+
+Acessarei a raiz onde o salvei;
+# cd /
+…e rodarei o script:
+
+# ./backup.sh
+
+    
