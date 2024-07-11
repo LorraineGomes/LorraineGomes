@@ -1,0 +1,40 @@
+Exemplo de Agendamento
+Vamos supor que eu quero executar este processo de backup em cada Segunda-feira e Sábado as 13:00 hs.
+
+1 – Abra o utilitário de editor crontab:
+crontab -e
+2 – Role até o final do arquivo e cole as seguintes linha
+# Agendamento do Backup "/dados-top"
+ 01 13 * * 1,6 /bin/bash /backup.sh
+
+
+2a Opção – Forma de Agendamento Ainda Menos Detalhado
+Usando o comando “crontab -e” você criou um agendamento bem específico, mas se quiser fazer algo mais simples, ou seja, que rode de hora em hora, 1 vez semanalmente, mensalmente e assim por diante, existe um meio bem simples. E nesse caso, não use o “crontab -e”.
+
+
+Apenas copie e cole seu script de backup em uma das pastas do cron específicas que o rodarão conforme o nome de cada pasta.
+Temos as seguintes pastas na estrutura de arquivos do Cron:
+
+cd /etc
+
+cron.hourly      => de hora em hora
+cron.daily         => diariamente
+cron.weekly      => semanalmente
+cron.monthly   => mensalmente
+
+Basta colar seu script em uma delas de sua escolha e pronto.
+
+Você pode usar também caracteres especiais no seu cron, como:
+
+@reboot seu comando
+@daily seu comando
+@monthly seu comando
+
+Então sempre que o dia virar, ou a cada mês ou reboot, o comando será executado.
+
+Outros artigos que falam sobre o Cron:
+https://cleuber.com.br/index.php/2014/06/24/agendador-de-tarefas-cron-no-linux
+script-para-backup-compactado-com-tar-e-gz-com-timestamp-agendado-via-cron
+como-usar-o-comando-rsync-para-transferir-dados-para-diretorios-locais-e-remotos
+
+
